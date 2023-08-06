@@ -20,6 +20,7 @@ class MyApp extends StatelessWidget {
       builder: (context, child) {
         return MaterialApp(
           title: 'Website1',
+          debugShowCheckedModeBanner: false,
           theme: ThemeData(
 
             primarySwatch: Colors.blue,

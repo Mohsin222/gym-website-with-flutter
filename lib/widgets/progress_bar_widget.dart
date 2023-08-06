@@ -24,10 +24,10 @@ Row(
                 ),
                 SizedBox(height: 8.h,),
                  FittedBox(
-                  fit: BoxFit.contain,
+                  fit: BoxFit.fill,
                    child: LinearPercentIndicator(
                                  width: 1.sw,
-                                 lineHeight: 8.0,
+                                 lineHeight: 20.0,
                                  barRadius: Radius.circular(10.r),
                                  percent: 0.8,
                                  backgroundColor: Colors.grey,

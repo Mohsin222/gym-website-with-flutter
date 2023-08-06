@@ -74,7 +74,12 @@ crossAxisAlignment: CrossAxisAlignment.center,
   //   child: Image(image: AssetImage(images[3])),
   // ),
 Wrap(
+  verticalDirection: VerticalDirection.up,
 alignment:WrapAlignment.start,
+runAlignment: WrapAlignment.spaceBetween,
+
+spacing: 0.1.sw,
+clipBehavior: Clip.antiAlias,
   children: images.map((e) =>Padding(
     padding: const EdgeInsets.all(20.0),
     child: Image(image: AssetImage(e)),

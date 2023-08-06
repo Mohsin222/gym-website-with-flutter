@@ -16,7 +16,7 @@ class Section2 extends StatelessWidget {
     return  Container(
       // height: 0.9.sh,
       width: 1.sw,
-      padding: deviceType ==DeviceType.desktop ? EdgeInsets.symmetric(horizontal: 70,vertical: 70) :deviceType== DeviceType.tablet ? EdgeInsets.symmetric(horizontal: 50,vertical: 70):EdgeInsets.symmetric(horizontal: 100,vertical: 70),
+      // padding: deviceType ==DeviceType.desktop ? EdgeInsets.symmetric(horizontal: 70,vertical: 70) :deviceType== DeviceType.tablet ? EdgeInsets.symmetric(horizontal: 50,vertical: 70):EdgeInsets.symmetric(horizontal: 100,vertical: 70),
       decoration: BoxDecoration(
         border: Border.all(),
            color: Colors.white,
@@ -24,12 +24,13 @@ class Section2 extends StatelessWidget {
    
       child: Wrap(
         alignment: WrapAlignment.center,
-  spacing: 40.w,
+  spacing: 10.w,
         // mainAxisAlignment: MainAxisAlignment.center,
         children: [
                 Container(
-                          width:deviceType==DeviceType.desktop? 0.3.sw :1.sw,
-                          padding: EdgeInsets.symmetric(vertical: 35),
+                          width:deviceType==DeviceType.desktop? 0.4.sw :1.sw,
+                          // padding: EdgeInsets.symmetric(vertical: 35),
+                          padding: deviceType ==DeviceType.desktop ? EdgeInsets.symmetric(horizontal: 0,vertical: 70) :deviceType== DeviceType.tablet ? EdgeInsets.symmetric(horizontal: 50,vertical: 70):EdgeInsets.symmetric(horizontal: 30,vertical: 70),
                            decoration: BoxDecoration(
                    
                            ),
@@ -87,21 +88,23 @@ class Section2 extends StatelessWidget {
           //   SizedBox(
           //   width: 0.1.sw,
           // ),
-          FittedBox(
-            child: Container(
+          Container(
           //  padding: EdgeInsets.symmetric(vertical: 60,horizontal: 20),
-                    padding: EdgeInsets.symmetric(vertical: 35),
-              decoration: BoxDecoration(border: Border.all()),
-                   width:deviceType==DeviceType.desktop? 0.4.sw :1.sw,
-              //  decoration: BoxDecoration(
-              //     image: DecorationImage(image: NetworkImage('https://images.unsplash.com/photo-1605296867304-46d5465a13f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGd5bXxlbnwwfDB8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60'),fit: BoxFit.fill,
-              //     filterQuality: FilterQuality.high
-                  
-              //     ),
-              //  ),
-              child: Image(image: NetworkImage('https://images.unsplash.com/photo-1604480133080-602261a680df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80'),fit: BoxFit.fill,width: 1.sw,),
-            
-            ),
+                  padding: EdgeInsets.only(top: 35),
+            decoration: BoxDecoration(
+              // border: Border.all(),
+              )
+              ,
+                 width:deviceType==DeviceType.desktop? 0.4.sw :1.sw,
+                 
+            //  decoration: BoxDecoration(
+            //     image: DecorationImage(image: NetworkImage('https://images.unsplash.com/photo-1605296867304-46d5465a13f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGd5bXxlbnwwfDB8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60'),fit: BoxFit.fill,
+            //     filterQuality: FilterQuality.high
+                
+            //     ),
+            //  ),
+            // child: Image(image: NetworkImage('https://images.unsplash.com/photo-1604480133080-602261a680df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80'),fit: BoxFit.fill,width: 1.sw,),
+          child: Image.asset('assets/images/fitness.png',fit: BoxFit.fill,),
           ),
         
         ],
