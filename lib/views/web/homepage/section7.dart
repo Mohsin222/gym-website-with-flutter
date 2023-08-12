@@ -8,9 +8,9 @@ import 'package:website1/utils/hover_class.dart';
 
 import '../../../widgets/custom_social_icons.dart';
 
-class Section7 extends StatelessWidget {
+class TeamCardSectionWidget extends StatelessWidget {
     final String deviceType;
-  const Section7({
+  const TeamCardSectionWidget({
     Key? key,
     required this.deviceType,
   }) : super(key: key);
@@ -19,7 +19,7 @@ class Section7 extends StatelessWidget {
   Widget build(BuildContext context) {
     return  Container(
       width: 1.sw,
-      padding: EdgeInsets.all(90),
+      padding: deviceType== DeviceType.mobile ?EdgeInsets.symmetric(vertical: 50,horizontal: 10) :EdgeInsets.all(90),
         decoration: BoxDecoration(
         // color: Color(0xffF2F3F8),
         color: Colors.white,
@@ -63,7 +63,7 @@ class CustomSec7TrainerCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.only(top: 45.sp),
-          width: deviceType ==DeviceType.desktop ? 0.2.sw: deviceType ==DeviceType.tablet ?0.3.sw:0.8.sw,
+          width: deviceType ==DeviceType.desktop ? 0.2.sw: deviceType ==DeviceType.tablet ?0.3.sw :deviceType ==DeviceType.tablet?1.sw:0.8.sw,
          
           decoration: BoxDecoration(border: Border.all(color: Colors.grey), ),
     //  padding: EdgeInsets.zero,
@@ -96,10 +96,12 @@ width: 1.sw,
                     SizedBox(height: 5.h,),
                     SizedBox(
                       width: 1.sw,
-                      child: Wrap(
-                        
-                             alignment: WrapAlignment.center,
-                        children: List.generate(4, (index) => custom_social_icons(deviceType: deviceType)),
+                      child: FittedBox(
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                              //  alignment: WrapAlignment.center,
+                          children: List.generate(4, (index) => custom_social_icons(deviceType: deviceType)),
+                        ),
                       ),
                     ),
                 ]),

@@ -18,9 +18,11 @@ class Section6 extends StatelessWidget {
       // height: 0.5.sh,
          width: 1.sw,
     margin: EdgeInsets.all(20),
+    padding: deviceType ==DeviceType.mobile ?EdgeInsets.symmetric(vertical: 50,horizontal: 10):EdgeInsets.all(50),
       decoration: BoxDecoration(
         // color: Color(0xffF2F3F8),
         color: Color(0xfff9f9f9),
+        
         
 
 

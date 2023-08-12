@@ -14,7 +14,7 @@ class Section4 extends StatelessWidget {
       color: Color(0xfff2f3f8),
       width: 1.sw,
       // height: 1.sh,
-      padding:const EdgeInsets.symmetric(vertical: 50,horizontal: 50),
+      padding: deviceType == DeviceType.mobile ?EdgeInsets.symmetric(vertical: 50,horizontal: 10): EdgeInsets.symmetric(vertical: 50,horizontal: 50),
       child: Wrap(
         // mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -28,7 +28,7 @@ class Section4 extends StatelessWidget {
             // mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment:deviceType ==DeviceType.mobile ?CrossAxisAlignment.center: CrossAxisAlignment.start,
             children: [
-           const FourthSectionHeading(text: 'We Are Different',),
+            FourthSectionHeading(text: 'We Are Different',deviceType: deviceType,),
              SizedBox(height: 40.h,),
             FourthSectiontile(deviceType:deviceType),
    SizedBox(height: 30.h,),
@@ -47,7 +47,7 @@ class Section4 extends StatelessWidget {
             // mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment:deviceType ==DeviceType.mobile ?CrossAxisAlignment.center: CrossAxisAlignment.start,
             children: [
-            FourthSectionHeading(text: 'Our Mission',),
+            FourthSectionHeading(text: 'Our Mission',deviceType: deviceType,),
              SizedBox(height: 40.h,),
     Container(
       padding: EdgeInsets.symmetric(vertical: 130,horizontal: 50),
@@ -70,9 +70,10 @@ class Section4 extends StatelessWidget {
 }
 
 class FourthSectionHeading extends StatelessWidget {
+  final String deviceType;
   final String text;
   const FourthSectionHeading({
-    super.key, required this.text,
+    super.key, required this.text, required this.deviceType,
   });
 
   @override
@@ -83,6 +84,7 @@ class FourthSectionHeading extends StatelessWidget {
           fontWeight: FontWeight.w900,
           color: Colors.black
         ),
+        textAlign: deviceType == DeviceType.mobile ? TextAlign.center:TextAlign.start,
     );
   }
 }

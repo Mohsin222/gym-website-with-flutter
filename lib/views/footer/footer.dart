@@ -21,30 +21,33 @@ class FooterScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     print(deviceType);
+ 
     return  Container(
       width: 1.sw,
       
-      padding:const EdgeInsets.all(77),
+      padding:deviceType ==DeviceType.mobile ?const EdgeInsets.symmetric(vertical: 50,horizontal: 10):deviceType == DeviceType.desktop ?const EdgeInsets.all(60):deviceType==DeviceType.tablet ? const EdgeInsets.symmetric(vertical: 40,horizontal: 30):const EdgeInsets.all(60),
       
-      decoration: BoxDecoration(border: Border.all(),
+      decoration: BoxDecoration(
       color:const Color(0xff050521),
       ),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Container(
+          SizedBox(
                      width: 1.sw,
             child: Wrap(
+              spacing: 10,
               // crossAxisAlignment: CrossAxisAlignment.start,
-              alignment: WrapAlignment.start,
+              alignment: WrapAlignment.center,
               children: [
               FooterFirstColumn(deviceType: deviceType,),
           
                 
                
-                 FotterSecondColumn(deviceType: deviceType,),
+                FotterSecondColumn(deviceType: deviceType,),
                    
                  FooterColumn3(deviceType: deviceType,),
-                 FooterColumn4(deviceType: deviceType),
+                 FooterColumn4(deviceType: deviceType)
 
             ]),
           ),

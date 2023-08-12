@@ -3,7 +3,7 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:website1/utils/device_type.dart';
-import 'package:website1/views/web/section1/section4.dart';
+import 'package:website1/views/web/homepage/section4.dart';
 
 
 
@@ -34,7 +34,7 @@ crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisSize: MainAxisSize.max,
               crossAxisAlignment:deviceType ==DeviceType.mobile ?CrossAxisAlignment.center: CrossAxisAlignment.center,
               children: [
-                const FourthSectionHeading(text: 'Our Clients',),    
+                 FourthSectionHeading(text: 'Our Clients',deviceType: deviceType,),    
                 SizedBox(height: 6.h,),  
                   Text('We offer a variety of solutions from leading financial service providers,\nso you have many options when deciding what type of annuity is right for you,',
                  style: TextStyle(color: Colors.black,

@@ -16,16 +16,17 @@ class Section3 extends StatelessWidget {
       // height: 1.sh,
       width: 1.sw,
                decoration: BoxDecoration(
-        image: DecorationImage(image: NetworkImage('https://images.unsplash.com/photo-1518622358385-8ea7d0794bf6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80'),fit: BoxFit.fill,
+        image: DecorationImage(image: NetworkImage('https://images.unsplash.com/photo-1567013127542-490d757e51fc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80'),fit: BoxFit.fill,
         filterQuality: FilterQuality.high,
-        colorFilter:ColorFilter.mode(Colors.blue.shade200.withOpacity(0.9) ,BlendMode.modulate)
+        colorFilter:ColorFilter.mode(Color.fromARGB(255, 9, 46, 78).withOpacity(0.9) ,BlendMode.modulate)
         
         ),
-              color: Colors.grey,
+              // color: Colors.white,
+
              ),
 
       child: Container(
-        padding: deviceType== DeviceType.desktop ?EdgeInsets.symmetric(vertical: 35,horizontal: 30):EdgeInsets.symmetric(vertical: 0,horizontal: 0),
+        padding: deviceType== DeviceType.desktop ?EdgeInsets.symmetric(vertical: 35,horizontal: 30):deviceType== DeviceType.mobile ? EdgeInsets.symmetric(vertical: 35,horizontal: 20):EdgeInsets.symmetric(vertical: 35,horizontal: 20),
         width: 1.sw,
         child: Column(children: [
           Container(child: Text('Our Services',
@@ -43,21 +44,25 @@ class Section3 extends StatelessWidget {
               textAlign: TextAlign.center,
               ),
           SizedBox(height: 25.h,),
-              Wrap(
-                alignment : WrapAlignment.start,
-                runSpacing: 20.w,
-                spacing: 15.w,
-                children: [
-                  ThirdSectionCard(deviceType: deviceType,),
-           
-                        ThirdSectionCard(deviceType: deviceType,),
-            
-                        ThirdSectionCard(deviceType: deviceType,),
+              SizedBox(
+                width: 1.sw,
+                child: Wrap(
+                  crossAxisAlignment: WrapCrossAlignment.center,
+                  alignment : WrapAlignment.center,
+                  runSpacing: 20.w,
+                  spacing: 15.w,
+                  children: [
+                    ThirdSectionCard(deviceType: deviceType,),
+                         
+                          ThirdSectionCard(deviceType: deviceType,),
+                          
                           ThirdSectionCard(deviceType: deviceType,),
                             ThirdSectionCard(deviceType: deviceType,),
                               ThirdSectionCard(deviceType: deviceType,),
-             
-                ],
+                                ThirdSectionCard(deviceType: deviceType,),
+                           
+                  ],
+                ),
               ),
         ],),
       )
@@ -74,11 +79,11 @@ class ThirdSectionCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: deviceType ==DeviceType.desktop ?100.w: deviceType ==DeviceType.tablet ? 150.w: deviceType ==DeviceType.mobile ? 0.8.sw: 100.w,
+      width: deviceType ==DeviceType.desktop ?80.w: deviceType ==DeviceType.tablet ? 150.w: deviceType ==DeviceType.mobile ? 0.8.sw: 100.w,
 
 
 
-      padding: EdgeInsets.all(deviceType ==DeviceType.desktop ?20:20),
+      // padding: EdgeInsets.all(deviceType ==DeviceType.desktop ?20:20),
       // decoration: BoxDecoration(border: Border.all()),
       child: Column(
         children: [
@@ -95,7 +100,7 @@ class ThirdSectionCard extends StatelessWidget {
           
           ),
            SizedBox(height: 5.h,),
-          Text('We offer a variety of solutions from leading financial service providers,\nso you have many options when deciding what type of annuity is right for you,',
+          Text('Wealth management is the ability of an advisor or advisory team to deliver a full range of financial services and products to an affluent client in a consultative way.,',
        style: TextStyle(color: Color.fromRGBO(255, 255, 255, 0.5),
        fontSize: 16.sp,
        height: 1.5.h,

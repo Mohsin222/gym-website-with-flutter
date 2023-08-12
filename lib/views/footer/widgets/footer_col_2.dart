@@ -12,23 +12,28 @@ class FotterSecondColumn extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-     padding: EdgeInsets.all(10),
+    //  padding: EdgeInsets.all(10),
     //  width:70.w,
-          width:deviceType == DeviceType.desktop ? 70.w :deviceType == DeviceType.mobile?1.sw: 0.4.sw,
+             width:deviceType == DeviceType.desktop ? 70.w :deviceType == DeviceType.mobile? 1.sw: deviceType == DeviceType.tablet?0.4.sw : 0.4.sw,
      // color: Colors.red,
+      margin: deviceType == DeviceType.mobile ? EdgeInsets.symmetric(horizontal: 10.h):EdgeInsets.zero,
     child: Column(
-     crossAxisAlignment: CrossAxisAlignment.start,
+      
+    //  crossAxisAlignment:deviceType ==DeviceType.mobile ? CrossAxisAlignment.center:CrossAxisAlignment.start,
+    crossAxisAlignment: CrossAxisAlignment.start,
+     
           children: [
             SizedBox(height: 5.h,),
          
-  CustomFooterHeading(text:'RECENT POSTS' ,),
+  CustomFooterHeading(text:'RECENT POSTS' ,deviceType: deviceType,),
   
-       SizedBox(height: 10.h,),
+       SizedBox(height: 20.h,),
              CustomFutterCard(),
-             SizedBox(height: 10.h,),
+           SizedBox(height: 20.h,),
              CustomFutterCard(),
-         SizedBox(height: 10.h,),
+        SizedBox(height: 20.h,),
              CustomFutterCard(),
+             SizedBox(height: 20.h,),
       
           ],
     ),

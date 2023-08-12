@@ -5,14 +5,15 @@ import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:website1/utils/device_type.dart';
 import 'package:website1/views/footer/footer.dart';
-import 'package:website1/views/web/section1/section1.dart';
-import 'package:website1/views/web/section1/section4.dart';
+import 'package:website1/views/web/homepage/section1.dart';
+import 'package:website1/views/web/homepage/section4.dart';
 
-import '../views/web/section1/secction5.dart';
-import '../views/web/section1/section2.dart';
-import '../views/web/section1/section3.dart';
-import '../views/web/section1/section6.dart';
-import '../views/web/section1/section7.dart';
+import '../views/appbar/navbar.dart';
+import '../views/web/homepage/secction5.dart';
+import '../views/web/homepage/section2.dart';
+import '../views/web/homepage/section3.dart';
+import '../views/web/homepage/section6.dart';
+import '../views/web/homepage/section7.dart';
 
 class Layout1 extends StatelessWidget {
   const Layout1({super.key});
@@ -23,34 +24,37 @@ class Layout1 extends StatelessWidget {
       body: LayoutBuilder(builder: (context, constraints) {
         print(constraints.maxWidth);
         if (constraints.maxWidth <= 500) {
-          return MobileBody();
-          return Container(
-            color: Colors.red,
-          );
+          return HomePageMobileBody();
+       
         }
         if (constraints.maxWidth < 700) {
           // return Container(color: Colors.blue,);
           // return Section1(deviceType: 'desktop',);
-          return MobileBody();
+          return HomePageMobileBody();
         }
         if (constraints.maxWidth < 950) {
-          return TabletBody();
+          return HomePageTabletBody();
         } else {
-          return DesktopBody();
+          return HomePageDesktopBody();
         }
       }),
     );
   }
 }
 
-class MobileBody extends StatelessWidget {
-  const MobileBody({super.key});
+class HomePageMobileBody extends StatelessWidget {
+  const HomePageMobileBody({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(DeviceType.mobile),
+    toolbarHeight: 0.1.sh,
+        backgroundColor: Colors.white,
+        title: Text(DeviceType.mobile,style: TextStyle(color: Colors.black),),
+        actions: [
+        // CustomNavbar()
+        ],
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -71,7 +75,7 @@ class MobileBody extends StatelessWidget {
             Section6(
               deviceType: DeviceType.mobile,
             ),
-            Section7(
+            TeamCardSectionWidget(
               deviceType: DeviceType.mobile,
             ),
             FooterScreen(
@@ -84,29 +88,18 @@ class MobileBody extends StatelessWidget {
   }
 }
 
-class TabletBody extends StatelessWidget {
-  const TabletBody({super.key});
+class HomePageTabletBody extends StatelessWidget {
+  const HomePageTabletBody({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-       
+    toolbarHeight: 0.1.sh,
         backgroundColor: Colors.white,
-        title: Text(DeviceType.tablet),
+        title: Text(DeviceType.tablet,style: TextStyle(color: Colors.black)),
         actions: [
-          Container(
-            padding: EdgeInsets.symmetric(vertical: 17,horizontal: 15),
-            child: Row(
-              children: [
-                Padding(
-                   padding: EdgeInsets.symmetric(vertical: 0,horizontal: 7),
-                  child: TextButton(onPressed: (){}, child: Text('Contact'.toUpperCase(),
-                  style: TextStyle(fontSize: 15.sp,color: Colors.black,fontWeight: FontWeight.w500),
-                  )),
-                )
-              ],
-            )),
+        CustomNavbar()
         ],
       ),
       body: SingleChildScrollView(
@@ -125,7 +118,7 @@ class TabletBody extends StatelessWidget {
             Section5(
               deviceType: DeviceType.tablet,
             ),
-            Section7(
+            TeamCardSectionWidget(
               deviceType: DeviceType.tablet,
             ),
             
@@ -142,14 +135,26 @@ class TabletBody extends StatelessWidget {
   }
 }
 
-class DesktopBody extends StatelessWidget {
-  const DesktopBody({super.key});
+class HomePageDesktopBody extends StatelessWidget {
+   HomePageDesktopBody({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('desktop'),
+    toolbarHeight: 100.h,
+        backgroundColor: Colors.white,
+        // title: Text(DeviceType.desktop,style: TextStyle(color: Colors.black)),
+        title:   Container(
+                padding: EdgeInsets.symmetric(vertical: 17,horizontal: 15),
+        constraints: BoxConstraints(maxWidth: 188.w),
+        width: 50.w,
+        child: Image(image: AssetImage('assets/images/logo.png'),fit: BoxFit.contain,),
+    
+      ),
+        actions: [
+        CustomNavbar()
+        ],
       ),
       body: Container(
         //  height: 1.sh,
@@ -162,6 +167,8 @@ class DesktopBody extends StatelessWidget {
               //   height: 0.5.sh,
               //   color: Colors.amber,
               // ),
+
+    
 
               Section1(
                 deviceType: DeviceType.desktop,
@@ -181,7 +188,7 @@ class DesktopBody extends StatelessWidget {
               Section6(
                 deviceType: DeviceType.desktop,
               ),
-              Section7(
+              TeamCardSectionWidget(
                 deviceType: DeviceType.desktop,
               ),
               FooterScreen(
@@ -190,7 +197,6 @@ class DesktopBody extends StatelessWidget {
 
               Container(
                 height: 1.sh,
-                width: 1.sw,
                 child: ListView.builder(
                     itemCount: 10,
                     itemBuilder: (context, index) {
@@ -202,7 +208,8 @@ class DesktopBody extends StatelessWidget {
               ),
               Container(
                 child: Text('MMMMMMMMMMMMMMMMMMMMMMMMMMMMMM'),
-              )
+              ),
+            
             ],
           ),
         ),
@@ -210,3 +217,6 @@ class DesktopBody extends StatelessWidget {
     );
   }
 }
+
+
+

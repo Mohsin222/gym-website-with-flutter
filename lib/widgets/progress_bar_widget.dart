@@ -15,10 +15,10 @@ class ProgressBarWidget extends StatelessWidget {
 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text('HTML',style: TextStyle(fontWeight: FontWeight.w600),),
+                    Text('Wealth',style: TextStyle(fontWeight: FontWeight.w300,fontSize: 14.sp.sp),),
                     // SizedBox(width: 20.w,),
                     Spacer(),
-                    Text('60%',style: TextStyle(fontWeight: FontWeight.w600),),
+                    Text('60%',style: TextStyle(fontWeight: FontWeight.w300,fontSize: 14.sp.sp),),
                     SizedBox(width: 20.w,),
                   ],
                 ),
@@ -31,7 +31,7 @@ Row(
                                  barRadius: Radius.circular(10.r),
                                  percent: 0.8,
                                  backgroundColor: Colors.grey,
-                                 progressColor: Colors.yellow[400],
+                                 progressColor: Color(0xffca970b),
                                ),
                  ),
       ],

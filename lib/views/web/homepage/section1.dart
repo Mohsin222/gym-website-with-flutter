@@ -73,17 +73,24 @@ widgetSpacing,
 
         Container(
           height: 50.h,
-          width: 0.3.sh,
+          width: 0.5.sw,
               //  padding: const EdgeInsets.symmetric(horizontal: 80),
-          color: Colors.green,
+          // color: Colors.green,
+
           child: ElevatedButton(onPressed: (){}, 
           
           style: ElevatedButton.styleFrom(
-           backgroundColor: Color(0xffe3b536),
+           backgroundColor: Color(0xffca970b),
             // padding: EdgeInsets.symmetric(vertical: 30,horizontal: 50)
           ),
-          child: Text('Get a Quote',
-          style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white,fontSize: 20.sp),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text('Get a Quote',
+              style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white,fontSize: 20.sp),
+              ),
+              Icon(Icons.arrow_forward_ios,size: 20.sp,)
+            ],
           )),
         )
         ]),

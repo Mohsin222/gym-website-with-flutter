@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:website1/views/web/home.dart';
+import 'package:website1/views/web/about_us/about_us.dart';
+
 import 'package:website1/widgets/layout1.dart';
 
 void main() {
@@ -26,7 +27,7 @@ class MyApp extends StatelessWidget {
             primarySwatch: Colors.blue,
           ),
           // home:const HomeScreem(),
-          home: Layout1(),
+          home: AboutUsScreen(),
         );
       }
     );

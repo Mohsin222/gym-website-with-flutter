@@ -15,13 +15,15 @@ class FooterColumn4 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-          padding: EdgeInsets.all(10),
-        width:deviceType == DeviceType.desktop ? 50.w :deviceType == DeviceType.mobile?1.sw: 0.4.sw,        
+      decoration: BoxDecoration(border:Border.all() ),
+          // padding: EdgeInsets.all(10),
+        width:deviceType == DeviceType.desktop ? 70.w :deviceType == DeviceType.mobile?1.sw: 0.4.sw,        
         child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+          
+              crossAxisAlignment:deviceType==DeviceType.mobile ?CrossAxisAlignment.center: CrossAxisAlignment.start,
           children: [
                 SizedBox(height: 5.h,),
-             CustomFooterHeading(text: 'CONTACT US',),
+             CustomFooterHeading(text: 'CONTACT US',deviceType: deviceType,),
        SizedBox(height: 10.h,),
        _customListTile(icon: Icons.phone,title: '0123456789',onpress: (){}),
         SizedBox(height: 10.h,),
@@ -35,6 +37,8 @@ class FooterColumn4 extends StatelessWidget {
   }
   _customListTile({required String title, required VoidCallback onpress, required IconData icon}){
     return        ListTile(
+
+
       onTap: onpress,
     leading: IconButton(onPressed: (){}, icon: Icon(icon,color: Color(0xffca970b)),
     
