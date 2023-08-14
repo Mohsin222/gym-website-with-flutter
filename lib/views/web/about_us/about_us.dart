@@ -65,7 +65,7 @@ class AboutUsDesktopScreen extends StatelessWidget {
       ),
       body: SingleChildScrollView(
         child: Column(children: [
-        const  AboutUsBanner(),
+        const  CustomBannerWithText(text: 'About US',),
                       AboutUsSection(deviceType: DeviceType.desktop),
                       AboutUsThirdSection(deviceType: DeviceType.desktop,),
           TeamCardSectionWidget(   deviceType: DeviceType.desktop),
@@ -107,7 +107,7 @@ class AboutUsTabletScreen extends StatelessWidget {
       ),
       body: SingleChildScrollView(
         child: Column(children: [
-        const  AboutUsBanner(),
+        const  CustomBannerWithText(text: 'About US',),
                           AboutUsSection(deviceType: DeviceType.tablet),
                           AboutUsThirdSection(deviceType: DeviceType.tablet,),
 
@@ -146,7 +146,7 @@ class AboutUsMobileScreen extends StatelessWidget {
       ),
       body: SingleChildScrollView(
         child: Column(children: [
-        const  AboutUsBanner(),
+          CustomBannerWithText(text: 'About US',),
                           AboutUsSection(deviceType: DeviceType.mobile),
 AboutUsThirdSection(deviceType: DeviceType.mobile,),
           TeamCardSectionWidget(   deviceType: DeviceType.mobile),

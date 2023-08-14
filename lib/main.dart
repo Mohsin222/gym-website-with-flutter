@@ -4,6 +4,8 @@ import 'package:website1/views/web/about_us/about_us.dart';
 
 import 'package:website1/widgets/layout1.dart';
 
+import 'views/web/service/services_screen.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -27,7 +29,7 @@ class MyApp extends StatelessWidget {
             primarySwatch: Colors.blue,
           ),
           // home:const HomeScreem(),
-          home: AboutUsScreen(),
+          home: ServicesScreen(),
         );
       }
     );
